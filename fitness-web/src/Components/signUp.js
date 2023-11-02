@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import './Components/styles.css';
+import './styles.css';
 
 
-function App() {
+function SignUp() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -31,14 +31,14 @@ function App() {
     //Prevent page reload
     event.preventDefault();
 
-    var { uname, pass } = document.forms[0];
+    var { uname, pass, pass1 } = document.forms[0];
 
     // Find user login info
     const userData = database.find((user) => user.username === uname.value);
 
     // Compare user info
     if (userData) {
-      if (userData.password !== pass.value) {
+      if (userData.password !== pass.value && userData.password1 !== pass1.value) {
         // Invalid password
         setErrorMessages({ name: "pass", message: errors.pass });
        
@@ -72,9 +72,9 @@ function App() {
           {renderErrorMessage("pass")}
         </div>
         <div className="input-container">
-          <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
+          <label> Re Enter Password </label>
+          <input type="password" name="pass1" required />
+          {renderErrorMessage("pass1")}
         </div>
         <div className="button-container">
           <input type="submit" />
@@ -86,11 +86,11 @@ function App() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        <div className="title">SignUp</div>
+        {isSubmitted ? <div>User is successfully Signed Up</div> : renderForm}
       </div>
     </div>
   );
 }
 
-export default App;
+export default SignUp;

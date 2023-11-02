@@ -1,5 +1,5 @@
 .app {
-    font-family: sans-serif;
+    font-family: sans-serif; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,7 +9,7 @@
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     background-color: #f8f9fd;
   }
-  
+  /*style for signup*/
   input[type="text"],
   input[type="password"] {
     height: 25px;
