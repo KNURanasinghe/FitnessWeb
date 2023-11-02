@@ -13,7 +13,7 @@ li{
 }
 a{
   text-decoration: none;
-  color: darkgray;   
+  color: white;   
 }
 
 .nav{
@@ -75,3 +75,4 @@ a{
 .toggle.line3{
     transform: rotate(45deg) translate(-4px, 5px);
 }
+
