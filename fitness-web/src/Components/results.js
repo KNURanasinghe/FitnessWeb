@@ -3,22 +3,40 @@ import './homePage.css';
 
 const Results = () => {
   const [textBoxValue, setTextBoxValue] = useState('');
+  const [name] = useState('Nidarshana');
+  const [bp] = useState('120/80');
+  const [sugar] = useState('200/120');
 
   const handleTextBoxChange = (e) => {
     setTextBoxValue(e.target.value);
   };
 
   return (
-    
     <div>
-      <div className='cont'>
-      <div className='detail'>
-        <h2>hi</h2>
-      </div>
-      </div>
+     
+<div className='upper'>
+    <div className='ucontainer'>
+        <div className="centered-container1 col1">
+            <div className="col1">
+                <h2>Your Info :</h2>
+            </div>
+            <div className="col1">
+                <div className='h2'>
+                <h3>{name }</h3>
+                <br></br>
+                <h3>{bp }</h3>
+                <br></br>
+                <h3>{sugar }</h3>
+                <br></br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
       <div className="banner-container">
         <div className="container">
-          <div className="centered-container">
+        <div className="centered-container">
             <div className="col">
               <h2>Meal Plan</h2>
             </div>
@@ -57,3 +75,4 @@ const Results = () => {
 }
 
 export default Results;
+ 

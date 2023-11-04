@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './homePage.css';
+import Header from './header';
+import Footer from './footer';
 
 const HomePage = () => {
   const [name] = useState('Nidarshana');
@@ -31,6 +33,7 @@ const HomePage = () => {
 
   return (
     <div>
+      <Header></Header>
       <div className="banner-container">
         <div className="container">
           <div className="centered-container">
@@ -81,6 +84,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

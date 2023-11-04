@@ -1,4 +1,4 @@
-/* src/components/Home/Home.css */
+
 
 .banner-container {
     background-color: rgb(255, 255, 255);
@@ -24,9 +24,8 @@
     
 }
 
-/* styles.css */
 
-/* Center the containers horizontally and vertically */
+
 
 
 /* Style for the outer container */
@@ -100,5 +99,14 @@
 .h2 h2{
     text-align: start;
 }
+#contact p{
+    font-size: 22px;
+}
+#mission p{
+    font-size: 22px;
+}
+#about p{
+    font-size: 22px;
+    }
 
 

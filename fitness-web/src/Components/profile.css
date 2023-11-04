@@ -1,4 +1,4 @@
-/* src/components/Home/Home.css */
+
 
 .banner-container {
     background-color: rgb(255, 255, 255);
@@ -24,9 +24,8 @@
     
 }
 
-/* styles.css */
 
-/* Center the containers horizontally and vertically */
+
 
 
 /* Style for the outer container */
@@ -99,6 +98,12 @@
 }
 .h2 h2{
     text-align: start;
+}
+ p{
+    font-size: 24px;
+}
+ h2{
+    font-size: 18px;
 }
 
 
