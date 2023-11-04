@@ -1,28 +1,88 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './homePage.css';
 
 const HomePage = () => {
+  const [name] = useState('Nidarshana');
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [file, setFile] = useState(null);
+
+  const handleHeightChange = (e) => {
+    setHeight(e.target.value);
+  };
+
+  const handleWeightChange = (e) => {
+    setWeight(e.target.value);
+  };
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form submission (for demonstration purposes)
+
+    // Clear the form fields
+    setHeight('');
+    setWeight('');
+    setFile(null);
+  };
+
   return (
     <div>
-
-<div className="banner-container">
-                {/* <div className="text-center">
-                    <h1 id='tx1' className=" text-6xl ">Welcome to Fitness Web</h1>
-                    <h4 id='tx2' className="text-4xl "> Your very own personal tutorial corner</h4>
-                </div> */}
-                 <div class="container">
-        <div class="centered-container">
-            <div className='col'>
-              <h4>this is for add report</h4>
+      <div className="banner-container">
+        <div className="container">
+          <div className="centered-container">
+            <div className="col">
+              <h2>Hello {name} 👋 ...</h2>
             </div>
-        </div>
-        <div class="centered-container">
-           
-        </div>
-    </div>
+            <br></br>
+            <div className="col1">
+              <h4>Enter your details here </h4>
             </div>
+            <br></br><br></br>
+            <div className="col2">
+              <form onSubmit={handleSubmit}>
+                <table className="form-table">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label htmlFor="height">Height (cm):</label>
+                      </td>
+                      
+                      <td>
+                        <input type="text" id="height" value={height} onChange={handleHeightChange} />
+                      </td>
+                    </tr>
+                    <br></br>
+                    <tr>
+                      <td>
+                        <label htmlFor="weight">Weight (kg):</label>
+                      </td>
+                      <td>
+                        <input type="text" id="weight" value={weight} onChange={handleWeightChange} />
+                      </td>
+                    </tr>
+                    <br></br>
+                    <tr>
+                      <td>
+                        <label htmlFor="file">Upload Report:</label>
+                      </td>
+                      <td>
+                        <input type="file" id="file" onChange={handleFileChange} />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
