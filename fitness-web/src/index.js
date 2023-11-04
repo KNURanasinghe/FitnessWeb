@@ -8,12 +8,14 @@ import {
 import Profile from './Components/profile';
 import HomePage from './Components/homePage';
 import About from './Components/about';
+import App from './App';
 
 
 
 const router = createBrowserRouter([
+
   {
-    path: "homePage",
+    path: "/homePage",
     element: <HomePage/>,
     
   },
