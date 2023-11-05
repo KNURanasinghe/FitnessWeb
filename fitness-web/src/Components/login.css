@@ -33,35 +33,57 @@
   .button-container {
     display: flex;
     justify-content: center;
+    padding: 20px;
   }
   
   .login-form {
     background-color: #f0f0f0;
     padding: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    width: 800px;
-    height: 600px;text-align: center;
+    width: 60vw;
+    height: auto;
+    text-align: center;
+  }
+
+  .form {
+    width: 80%;
+    display: inline-block;
+    align-content: center;
+    margin: 0 auto;
   }
   
   .list-container {
     display: flex;
+  }
+
+  .formBox {
+    margin: 0 auto;
+    height: auto;
   }
   
   .error {
     color: red;
     font-size: 12px;
   }
+
+  form {
+    display: inline-block;
+    display:flex;
+    flex-direction: column;
+  }
   
   .title {
-    font-size: 25px;
+    font-size: 45px;
     margin-bottom: 20px;
   }
   
   .input-container {
-    display: flex;
-    flex-direction: column;
     gap: 8px;
-    margin: 10px;
+    margin: 20px;
+    padding-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+    align-self: center;
   }
   .rap {
     display: flex;
@@ -69,6 +91,7 @@
   justify-content: center;
   align-items: center;
   height: 400px;
+  width: 100%;
   }
   .hed {
     padding: 1px;

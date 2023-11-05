@@ -9,7 +9,7 @@ import Login from './Components/login';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Login />
+      <SignUp />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

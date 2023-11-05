@@ -61,7 +61,7 @@ function Login() {
   const renderForm = (
     <div className="form">
       
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="formBox">
         <div className="input-container">
           <label>Username </label>
           <input type="text" name="uname" required />
@@ -85,9 +85,9 @@ function Login() {
     <div className="app">
       
       <div className="login-form">
-        <div className="hed">
+        {/* <div className="hed">
             <h2>Fitness Web</h2>
-        </div>
+        </div> */}
       <div className="rap">
         <div className="title">Login</div>
         {isSubmitted ? <div>User is successfully Signed Up</div> : renderForm}
