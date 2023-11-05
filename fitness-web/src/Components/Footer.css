@@ -1,7 +1,7 @@
 /* Footer.css */
 
 .bg-footer {
-    background-color: rgb(15, 73, 182);
+    background-color: #01d28e;
     color: #fff;
     
     text-align: center;
@@ -10,19 +10,19 @@
 .footer-row {
     display: flex;
     justify-content: space-between; /* Display titles side by side with space in between */
-    background-color: rgb(15, 73, 182);
+    background-color: #01d28e;
 }
 
 .tag {
     padding: 20px;
-    background-color: rgb(15, 73, 182); /* Add padding around each title group */
+    background-color: #01d28e; /* Add padding around each title group */
 }
 
 .footer-title {
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 10px;
-    background-color: rgb(15, 73, 182);
+    background-color: #01d28e;
     color: #fff;
 }
 
@@ -31,7 +31,7 @@
     text-decoration: none;
     color: #fff;
     
-    background-color: rgb(15, 73, 182);
+    background-color: #01d28e;
 }
 
 .link:hover {

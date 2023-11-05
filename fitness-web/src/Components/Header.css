@@ -21,7 +21,7 @@ a{
     align-items: center;
     justify-content: space-around;
     height: 8vh;
-    background:rgb(15, 73, 182) ;
+    background:#01d28e ;
 }
 .nav__brand{
     text-transform: uppercase;

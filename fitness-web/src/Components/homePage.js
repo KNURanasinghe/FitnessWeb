@@ -33,7 +33,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div className="banner-container">
         <div className="container">
           <div className="centered-container">
@@ -42,10 +42,11 @@ const HomePage = () => {
             </div>
             <br></br>
             <div className="col1">
-              <h4>Enter your details here </h4>
+              <h4>Enter your details here</h4>
             </div>
-            <br></br><br></br>
-            <div className="col2">
+            <br></br>
+            <br></br>
+            <div id ='col2' className="col2">
               <form onSubmit={handleSubmit}>
                 <table className="form-table">
                   <tbody>
@@ -53,7 +54,6 @@ const HomePage = () => {
                       <td>
                         <label htmlFor="height">Height (cm):</label>
                       </td>
-                      
                       <td>
                         <input type="text" id="height" value={height} onChange={handleHeightChange} />
                       </td>
@@ -78,13 +78,14 @@ const HomePage = () => {
                     </tr>
                   </tbody>
                 </table>
+                <br></br>
                 <button type="submit">Submit</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

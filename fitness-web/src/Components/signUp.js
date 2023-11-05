@@ -60,6 +60,7 @@ function SignUp() {
   // JSX code for login form
   const renderForm = (
     <div className="form">
+      
       <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label>Username </label>
@@ -80,14 +81,18 @@ function SignUp() {
           <input type="submit" />
         </div>
       </form>
+      
     </div>
   );
 
   return (
     <div className="app">
+      
       <div className="login-form">
+      <div className="rap">
         <div className="title">SignUp</div>
         {isSubmitted ? <div>User is successfully Signed Up</div> : renderForm}
+      </div>
       </div>
     </div>
   );

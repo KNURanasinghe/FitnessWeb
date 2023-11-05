@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-
 import Home from './Components/homePage';
 import About from './Components/about';
 import Profile from './Components/profile';
@@ -9,12 +8,11 @@ import Profile from './Components/profile';
 function App() {
   return (
     <Router>
-      
+      <Switch>
         <Route path="/homePage" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/profile" component={Profile} />
-        
-      
+      </Switch>
     </Router>
   );
 }

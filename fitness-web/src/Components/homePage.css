@@ -53,14 +53,12 @@
     font-size: 20px;
 }
 .col2 {
-    background-color: #f9f6f6eb;
+    background-color: transparent; /* Remove the background color */
     padding: 20px;
-    border: 1px solid #ccccccf1;
-    margin: 0 auto; 
     height: 300px;
     width: 600px;
-   text-align: center;
-}
+    text-align: center;
+  }
 .col2 label {
     font-size: 20px;
 }
@@ -100,5 +98,30 @@
 .h2 h2{
     text-align: start;
 }
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .form-table td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .form-table label {
+    font-weight: bold;
+  }
+  #col2{
+    background-color: transparent; /* Remove the background color */
+    padding: 20px;
+    /* Remove the border */
+    border: 0;
+    height: 300px;
+    width: 600px;
+    text-align: center;
+  }
+ 
 
 
