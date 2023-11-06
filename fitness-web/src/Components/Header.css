@@ -37,12 +37,21 @@ a{
     width: 2.5rem;
     height: 0.2rem;
     margin: 0.4rem;
-    background: darkgrey;
+    background: #fff;
     transition: 0.4s ease-in;
 }
 .nav__toggler{
     cursor: pointer;
     display: none;
+}
+
+.close__button{
+    position: absolute;
+    top: 0;
+    right: 5;
+    color: #fff;
+    cursor: pointer;
+    
 }
 
 @media screen and (max-width: 768px){
@@ -51,19 +60,20 @@ a{
     }
     .nav__menu{
         position: fixed;
-        top: 7vh;
+        top:5.5vh;
         right: 0;
         width: 50%;
         height: 93vh;
-        background:rgb(15, 73, 182) ;
+        background:#01d28e ;
         flex-direction: column;
         transform: translateX(100%);
-        transition: 0.5 ease-in;
+      
     }
 }
 /*nav acive class*/
 .nav__active{
     transform: translateX(0);
+    transition: 2 ease;
 }
 /*Toggler Icon Animation */
 .toggle.line1{

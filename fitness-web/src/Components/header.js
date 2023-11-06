@@ -18,10 +18,14 @@ const Header = () => {
 
   return (
     <nav className="nav">
+      
+
       <Link to="/homePage" className="nav__brand">
         Fitness Web
       </Link>
       <ul className={active}>
+      
+
         <li className="nav__item">
           <Link to="/homePage" className="nav__link">
             Home
