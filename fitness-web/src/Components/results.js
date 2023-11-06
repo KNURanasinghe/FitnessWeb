@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './homePage.css';
+import Header from './header';
+import Footer from './footer';
 
 const Results = () => {
   const [textBoxValue, setTextBoxValue] = useState('');
@@ -13,7 +15,7 @@ const Results = () => {
 
   return (
     <div>
-     
+     <Header></Header>
 <div className='upper'>
     <div className='ucontainer'>
         <div className="centered-container1 col1">
@@ -70,6 +72,7 @@ const Results = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

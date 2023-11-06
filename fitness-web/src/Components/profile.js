@@ -29,6 +29,12 @@ const Profile = () => {
                 <br></br>
                 <p>{name}</p>
               </section>
+             <section>
+              <br></br>
+             <div>
+                <button id="lgout" className="logout">LogOut</button>
+              </div>
+             </section>
             </div>
           </div>
         </div>

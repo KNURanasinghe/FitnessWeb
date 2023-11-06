@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 import './homePage.css';
 import Header from './header';
 import Footer from './footer';
+import Results from './results';
 
 const HomePage = () => {
   const [name] = useState('Nidarshana');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
   const [file, setFile] = useState(null);
+  // const [resultspage] = useState(Results); // You don't need this line
+
+  const history = useHistory(); // Initialize useHistory
 
   const handleHeightChange = (e) => {
     setHeight(e.target.value);
@@ -25,10 +30,13 @@ const HomePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent form submission (for demonstration purposes)
 
-    // Clear the form fields
-    setHeight('');
-    setWeight('');
-    setFile(null);
+    // Perform any necessary actions (e.g., form validation)
+    if (!file) {
+      alert("Please upload a file before submitting."); // Show a pop-up message
+      return; // Don't proceed with the submission
+    }
+    // Then, navigate to the Results page
+    history.push('/results');
   };
 
   return (
@@ -46,7 +54,7 @@ const HomePage = () => {
             </div>
             <br></br>
             <br></br>
-            <div id ='col2' className="col2">
+            <div id="col2" className="col2">
               <form onSubmit={handleSubmit}>
                 <table className="form-table">
                   <tbody>
@@ -88,6 +96,6 @@ const HomePage = () => {
       <Footer />
     </div>
   );
-}
+};
 
 export default HomePage;
