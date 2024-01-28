@@ -33,6 +33,35 @@
 .container {
     display: flex;
 }
+/* homePage.css */
+
+.bottom-left-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 550px;
+    padding: 20px;
+  }
+  .col2 {
+    text-align: right; /* Align the content to the right */
+  }
+  .submit-button {
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px; /* Optional: Add padding for better appearance */
+    background-color: #4caf50; /* Optional: Set background color */
+    color: #fff; /* Optional: Set text color */
+    font-size: 16px; /* Optional: Set font size */
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049; /* Optional: Change background color on hover */
+  }
+  
+  
 
 /* Style for the centered containers */
 .centered-container {

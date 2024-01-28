@@ -2,6 +2,7 @@ import React from 'react';
 import './about.css';
 import Header from './header';
 import Footer from './footer';
+import bottomLeftImage from '../Asset/web.jpg';
 
 
 const HomePage = () => {
@@ -36,6 +37,7 @@ const HomePage = () => {
            
           </div>
         </div>
+        <img src={bottomLeftImage} alt="Bottom Left Image" className="bottom-left-image" />
       </div>
       <Footer></Footer>
     </div>

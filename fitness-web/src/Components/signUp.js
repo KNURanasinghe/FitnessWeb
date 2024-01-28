@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import './styles.css';
 
 
@@ -6,13 +7,13 @@ function SignUp() {
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-
+  const history = useHistory();
   // User Login info
   const database = [
     {
-      username: "user1",
-      password: "pass1",
-      password1: "pass1"
+      username: "Asanga",
+      password: "12345",
+      password1: "12345"
     },
     {
       username: "user2",
@@ -44,6 +45,7 @@ function SignUp() {
        
       } else {
         setIsSubmitted(true);
+        history.push('/login');
       }
     } else {
       // Username not found

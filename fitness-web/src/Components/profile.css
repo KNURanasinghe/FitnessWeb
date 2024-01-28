@@ -105,5 +105,13 @@
  h2{
     font-size: 18px;
 }
+.bottom-left-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 550px;
+    padding: 20px;
+  }
 
 

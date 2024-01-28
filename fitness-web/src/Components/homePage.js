@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // Import useHistory
-import './homePage.css';
-import Header from './header';
+import { useHistory } from 'react-router-dom';
 import Footer from './footer';
-import Results from './results';
+import Header from './header';
+import './homePage.css';
+import bottomLeftImage from '../Asset/web.jpg';
 
 const HomePage = () => {
-  const [name] = useState('Nidarshana');
+  const [name] = useState('Asanga');
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
+  const [diseases, setDeseases] = useState('');
   const [file, setFile] = useState(null);
-  // const [resultspage] = useState(Results); // You don't need this line
 
-  const history = useHistory(); // Initialize useHistory
+  const history = useHistory();
 
   const handleHeightChange = (e) => {
     setHeight(e.target.value);
@@ -22,20 +22,21 @@ const HomePage = () => {
     setWeight(e.target.value);
   };
 
+  const handleDeceicesChange = (e) => {
+    setDeseases(e.target.value);
+  };
+
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent form submission (for demonstration purposes)
-
-    // Perform any necessary actions (e.g., form validation)
+    e.preventDefault();
     if (!file) {
-      alert("Please upload a file before submitting."); // Show a pop-up message
-      return; // Don't proceed with the submission
+      alert('Please upload a file before submitting.');
+      return;
     }
-    // Then, navigate to the Results page
     history.push('/results');
   };
 
@@ -78,6 +79,15 @@ const HomePage = () => {
                     <br></br>
                     <tr>
                       <td>
+                        <label htmlFor="diseases">Chronic Deseases :</label>
+                      </td>
+                      <td>
+                        <input type="text" id="diseases" value={diseases} onChange={handleDeceicesChange} />
+                      </td>
+                    </tr>
+                    <br></br>
+                    <tr>
+                      <td>
                         <label htmlFor="file">Upload Report:</label>
                       </td>
                       <td>
@@ -87,11 +97,16 @@ const HomePage = () => {
                   </tbody>
                 </table>
                 <br></br>
-                <button type="submit">Submit</button>
+                <div className="button-container">
+                <button type="submit" className="submit-button">
+                  Submit
+                </button>
+                </div>
               </form>
             </div>
           </div>
         </div>
+        <img src={bottomLeftImage} alt="Bottom Left Image" className="bottom-left-image" />
       </div>
       <Footer />
     </div>

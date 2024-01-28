@@ -2,10 +2,19 @@ import React, { useState } from "react";
 import "./about.css";
 import Header from "./header";
 import Footer from "./footer";
+import { useHistory } from "react-router-dom";
+import bottomLeftImage from '../Asset/web.jpg';
 
 const Profile = () => {
   const [mail] = useState("contact@yourwebsite.com");
-  const [name] = useState("Nidarshana");
+  const [name] = useState("Asanga");
+  const history = useHistory(); 
+  const handleLogout = () => {
+    // Perform any logout actions if needed
+
+    // Redirect to the login page
+    history.push("/login");
+  };
   return (
     <div>
       <Header></Header>
@@ -32,11 +41,12 @@ const Profile = () => {
              <section>
               <br></br>
              <div>
-                <button id="lgout" className="logout">LogOut</button>
+                <button id="lgout" className="logout"  onClick={handleLogout}>LogOut</button>
               </div>
              </section>
             </div>
           </div>
+          <img src={bottomLeftImage} alt="Bottom Left Image" className="bottom-left-image" />
         </div>
       </div>
       <Footer></Footer>

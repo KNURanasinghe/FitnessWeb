@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import './login.css';
-import { withSignIn } from 'react-auth-kit'
-
-
-
+import Axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
+  const history = useHistory();
   // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -13,9 +12,9 @@ function Login() {
   // User Login info
   const database = [
     {
-      username: "user1",
-      password: "pass1",
-      password1: "pass1"
+      username: "Asanga",
+      password: "12345",
+      password1: "12345"
     },
     {
       username: "user2",
@@ -27,29 +26,26 @@ function Login() {
   const errors = {
     uname: "invalid username",
     pass: "invalid password",
-    pass1: "invalid password"
   };
 
-  const handleSubmit = (event) => {
-    //Prevent page reload
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    var { uname, pass, pass1 } = document.forms[0];
+    var { uname, pass } = event.target.elements;
 
     // Find user login info
     const userData = database.find((user) => user.username === uname.value);
 
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value && userData.password1 !== pass1.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
-       
-      } else {
+    try {
+      // Check if user info exists and password matches
+      if (userData && (userData.password === pass.value || userData.password1 === pass.value)) {
         setIsSubmitted(true);
+        history.push('/home');
+      } else {
+        // Authentication failed
+        setErrorMessages({ name: "uname", message: errors.uname });
       }
-    } else {
-      // Username not found
+    } catch (error) {
+      console.error("Error during authentication:", error);
       setErrorMessages({ name: "uname", message: errors.uname });
     }
   };
@@ -63,7 +59,6 @@ function Login() {
   // JSX code for login form
   const renderForm = (
     <div className="form">
-      
       <form onSubmit={handleSubmit} className="formBox">
         <div className="input-container">
           <label>Username </label>
@@ -75,26 +70,20 @@ function Login() {
           <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         </div>
-       
         <div className="button-container">
           <input type="submit" />
         </div>
       </form>
-      
     </div>
   );
 
   return (
     <div className="app">
-      
       <div className="login-form">
-        {/* <div className="hed">
-            <h2>Fitness Web</h2>
-        </div> */}
-      <div className="rap">
-        <div className="title">Login</div>
-        {isSubmitted ? <div>User is successfully Signed Up</div> : renderForm}
-      </div>
+        <div className="rap">
+          <div className="title">Login</div>
+          {isSubmitted ? <div>User is successfully Signed Up</div> : renderForm}
+        </div>
       </div>
     </div>
   );

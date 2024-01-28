@@ -3,6 +3,7 @@ import './homePage.css';
 import Header from './header';
 import Footer from './footer';
 
+
 const Results = () => {
   const [textBoxValue, setTextBoxValue] = useState('');
   const [name] = useState('Nidarshana');
@@ -71,6 +72,7 @@ const Results = () => {
             </div>
           </div>
         </div>
+        
       </div>
       <Footer></Footer>
     </div>
