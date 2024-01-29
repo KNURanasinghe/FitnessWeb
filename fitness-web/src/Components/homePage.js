@@ -31,12 +31,42 @@ const HomePage = () => {
     setFile(selectedFile);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!file) {
       alert('Please upload a file before submitting.');
       return;
     }
+
+    // make a post request to 'http://127.0.0.1/api' with form data(..) and get response
+    const formData = new FormData();
+    formData.append('height', height);
+    formData.append('weight', weight);
+    formData.append('diseases', diseases);
+    formData.append('file', file);
+
+    try {
+      // Make a POST request
+      const response = await fetch('http://127.0.0.1/api', {
+        method: 'POST',
+        body: formData,
+      });
+
+      // Handle the response as needed (e.g., check response.ok, parse JSON, etc.)
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('Response Data:', responseData);
+        // You can navigate to '/results' or handle the response accordingly
+        history.push('/results');
+      } else {
+        console.error('Error:', response.status, response.statusText);
+        // Handle error
+      }
+    } catch (error) {
+      console.error('Fetch Error:', error);
+      // Handle fetch error
+    }
+
     history.push('/results');
   };
 
